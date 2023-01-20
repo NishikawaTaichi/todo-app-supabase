@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { deleteColorModeInLocalStorage } from "@/ui/theme";
 import {
   Box,
@@ -17,11 +17,43 @@ import {
 import { BiCheckCircle } from "react-icons/bi";
 import { DeleteIcon } from "@chakra-ui/icons";
 
+const tasks = [
+  {
+    id: "cbwodcbodsc",
+    uid: "cecbceiw61",
+    text: "aaaaaaaaaaaaaaaaaaaa",
+    isDone: true,
+    createdAt: "2022/2/12",
+  },
+  {
+    id: "cbwicbiwdc",
+    uid: "cwcwdu121",
+    text: "XXXXXXXXXXXXXXXXXXX",
+    isDone: false,
+    createdAt: "2022/2/13",
+  },
+  {
+    id: "cbwicbiwddew2334c",
+    uid: "cwcwdu121",
+    text: "XXXXXXXXXXXXXXXXXXX",
+    isDone: false,
+    createdAt: "2022/2/13",
+  },
+  {
+    id: "ceceuosx232r32rr",
+    uid: "cwcwdu1sxsxs21",
+    text: "XXXXXXXXXXXXXXXXXXX",
+    isDone: false,
+    createdAt: "2022/2/13",
+  },
+];
+
 export default function Home() {
   // After 3s reset the localStorage
   // useEffect(() => {
   //   setTimeout(deleteColorModeInLocalStorage, 3000);
   // }, []);
+
   return (
     <>
       <Head>
@@ -31,7 +63,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Heading>
+        <Heading mb={20}>
           TodoApp&nbsp;By&nbsp;
           <Text as="span" color="green.400">
             Supabase
@@ -42,7 +74,7 @@ export default function Home() {
           <Flex>
             <IconButton
               aria-label="checkCircle"
-              color="green.700"
+              color={tasks[0].isDone ? "green.700" : "gray.500"}
               variant="ghost"
               mr={4}
               isRound
@@ -70,7 +102,7 @@ export default function Home() {
           <Flex>
             <IconButton
               aria-label="checkCircle"
-              color="gray.600"
+              color={tasks[1].isDone ? "green.700" : "gray.600"}
               variant="ghost"
               isRound
               mr={4}
@@ -98,88 +130,7 @@ export default function Home() {
           <Flex>
             <IconButton
               aria-label="checkCircle"
-              color="green.700"
-              variant="ghost"
-              isRound
-              mr={4}
-            >
-              <Icon as={BiCheckCircle} w={6} h={6} />
-            </IconButton>
-            <Box>
-              <Heading size="sm">猫ちゃんとお昼寝</Heading>
-              <Text fontSize="sm" color="gray.500">
-                2022/1/21
-              </Text>
-            </Box>
-            <Spacer />
-            <IconButton
-              color="red.700"
-              aria-label="delete"
-              variant="ghost"
-              isRound
-              onClick={() => alert("本当に削除してもいいですか？")}
-            >
-              <DeleteIcon w={5} h={5} />
-            </IconButton>
-          </Flex>
-          <Flex>
-            <IconButton
-              aria-label="checkCircle"
-              color="green.700"
-              variant="ghost"
-              isRound
-              mr={4}
-            >
-              <Icon as={BiCheckCircle} w={6} h={6} />
-            </IconButton>
-            <Box>
-              <Heading size="sm">猫ちゃんとお昼寝</Heading>
-              <Text fontSize="sm" color="gray.500">
-                2022/1/21
-              </Text>
-            </Box>
-            <Spacer />
-            <IconButton
-              color="red.700"
-              aria-label="delete"
-              variant="ghost"
-              isRound
-              onClick={() => alert("本当に削除してもいいですか？")}
-            >
-              <DeleteIcon w={5} h={5} />
-            </IconButton>
-          </Flex>
-          <Flex>
-            <IconButton
-              aria-label="checkCircle"
-              color="green.700"
-              variant="ghost"
-              isRound
-              mr={4}
-            >
-              <Icon as={BiCheckCircle} w={6} h={6} />
-            </IconButton>
-            <Box>
-              <Heading size="sm">猫ちゃんとお昼寝</Heading>
-              <Text fontSize="sm" color="gray.500">
-                2022/1/21
-              </Text>
-            </Box>
-            <Spacer />
-            <IconButton
-              color="red.700"
-              aria-label="delete"
-              variant="ghost"
-              isRound
-              onClick={() => alert("本当に削除してもいいですか？")}
-            >
-              <DeleteIcon w={5} h={5} />
-            </IconButton>
-          </Flex>
-          <Flex>
-            <IconButton
-              aria-label="checkCircle"
-              color="green.700"
+              color={tasks[2].isDone ? "green.700" : "gray.600"}
               variant="ghost"
               isRound
               mr={4}
@@ -204,7 +155,10 @@ export default function Home() {
             </IconButton>
           </Flex>
         </Stack>
-        <Input placeholder="新しいタスクを入力..." w="600px" />
+
+        <Box pos="fixed" zIndex={10} bottom="20">
+          <Input placeholder="新しいタスクを入力..." w="600px" />
+        </Box>
       </main>
     </>
   );
