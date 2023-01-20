@@ -11,8 +11,7 @@ import {
   StackDivider,
   Text,
   Icon,
-  Center,
-  HStack,
+  IconButton,
   Spacer,
 } from "@chakra-ui/react";
 import { BiCheckCircle } from "react-icons/bi";
@@ -41,9 +40,15 @@ export default function Home() {
 
         <Stack divider={<StackDivider />} spacing="4" w="600px">
           <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="green.700" />
-            </Center>
+            <IconButton
+              aria-label="checkCircle"
+              color="green.700"
+              variant="ghost"
+              mr={4}
+              isRound
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
             <Box>
               <Heading size="sm">猫ちゃんとお昼寝</Heading>
               <Text fontSize="sm" color="gray.500">
@@ -51,15 +56,27 @@ export default function Home() {
               </Text>
             </Box>
             <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
           </Flex>
 
           <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="gray.600" />
-            </Center>
+            <IconButton
+              aria-label="checkCircle"
+              color="gray.600"
+              variant="ghost"
+              isRound
+              mr={4}
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
             <Box>
               <Heading size="sm">猫ちゃんとお昼寝</Heading>
               <Text fontSize="sm" color="gray.500">
@@ -67,15 +84,27 @@ export default function Home() {
               </Text>
             </Box>
             <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
           </Flex>
 
           <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="green.700" />
-            </Center>
+            <IconButton
+              aria-label="checkCircle"
+              color="green.700"
+              variant="ghost"
+              isRound
+              mr={4}
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
             <Box>
               <Heading size="sm">猫ちゃんとお昼寝</Heading>
               <Text fontSize="sm" color="gray.500">
@@ -83,30 +112,26 @@ export default function Home() {
               </Text>
             </Box>
             <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
-          </Flex>
-
-          <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="green.700" />
-            </Center>
-            <Box>
-              <Heading size="sm">猫ちゃんとお昼寝</Heading>
-              <Text fontSize="sm" color="gray.500">
-                2022/1/21
-              </Text>
-            </Box>
-            <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
           </Flex>
           <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="green.700" />
-            </Center>
+            <IconButton
+              aria-label="checkCircle"
+              color="green.700"
+              variant="ghost"
+              isRound
+              mr={4}
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
             <Box>
               <Heading size="sm">猫ちゃんとお昼寝</Heading>
               <Text fontSize="sm" color="gray.500">
@@ -114,14 +139,26 @@ export default function Home() {
               </Text>
             </Box>
             <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
           </Flex>
           <Flex>
-            <Center mr={4}>
-              <Icon as={BiCheckCircle} w={6} h={6} color="green.700" />
-            </Center>
+            <IconButton
+              aria-label="checkCircle"
+              color="green.700"
+              variant="ghost"
+              isRound
+              mr={4}
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
             <Box>
               <Heading size="sm">猫ちゃんとお昼寝</Heading>
               <Text fontSize="sm" color="gray.500">
@@ -129,9 +166,42 @@ export default function Home() {
               </Text>
             </Box>
             <Spacer />
-            <Center>
-              <DeleteIcon w={5} h={5} color="red.700" />
-            </Center>
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
+          </Flex>
+          <Flex>
+            <IconButton
+              aria-label="checkCircle"
+              color="green.700"
+              variant="ghost"
+              isRound
+              mr={4}
+            >
+              <Icon as={BiCheckCircle} w={6} h={6} />
+            </IconButton>
+            <Box>
+              <Heading size="sm">猫ちゃんとお昼寝</Heading>
+              <Text fontSize="sm" color="gray.500">
+                2022/1/21
+              </Text>
+            </Box>
+            <Spacer />
+            <IconButton
+              color="red.700"
+              aria-label="delete"
+              variant="ghost"
+              isRound
+              onClick={() => alert("本当に削除してもいいですか？")}
+            >
+              <DeleteIcon w={5} h={5} />
+            </IconButton>
           </Flex>
         </Stack>
         <Input placeholder="新しいタスクを入力..." w="600px" />
